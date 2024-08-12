@@ -13,7 +13,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                         <div class="nav-user-info">
-                            <h5 class="mb-0 text-white nav-user-name">{{ Auth::user()->userid }} </h5><!-- Display the staff's name if logged in -->
+                            <h5 class="mb-0 text-white nav-user-name">{{ Auth::user()->userid}}</h5><!-- Display the staff's name if logged in -->
                         </div>
                         <a class="dropdown-item" href=""><i class="fas fa-user mr-2"></i>Account</a>
                         <a href="{{ route('customer.logout') }}" class="dropdown-item"

@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->string('userid')->primary();
+            $table->id(); // Auto-incrementing primary key
+            $table->string('userid')->unique(); // Ensure userid is unique
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -21,7 +22,7 @@ return new class extends Migration
             $table->string('fname');
             $table->string('lname');
             $table->string('address1');
-            $table->string('address2');
+            $table->string('address2')->nullable(); // Address2 might be optional
             $table->string('city');
             $table->string('state');
             $table->integer('zip');
