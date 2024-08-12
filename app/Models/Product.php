@@ -9,7 +9,7 @@ class Product extends Model
 {
 
     // Specify the table name
-    protected $table = 'product';
+    protected $table = 'products';
 
     // Specify the primary key if it's not 'id'
     protected $primaryKey = 'productid';

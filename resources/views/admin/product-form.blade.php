@@ -120,11 +120,13 @@
             </div>
             <div class="modal-footer">
                 <a href="#" class="btn btn-secondary" data-dismiss="modal">Close</a>
+                @if(isset($product->image3))
                 <form action="{{ route('admin.product.deleteImage', ['productid' => $product->productid, 'image' => 'image3']) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Delete Image</button>
                 </form>
+                @endif
             </div>
         </div>
     </div>
@@ -144,11 +146,13 @@
             </div>
             <div class="modal-footer">
                 <a href="#" class="btn btn-secondary" data-dismiss="modal">Close</a>
+                @if(isset($product->image2))
                 <form action="{{ route('admin.product.deleteImage', ['productid' => $product->productid, 'image' => 'image2']) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-primary">Delete Image 2</button>
                 </form>
+                @endif
             </div>
         </div>
     </div>
