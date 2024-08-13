@@ -24,6 +24,14 @@ Route::get('/contact', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::get('/ibk', function () {
+    return view('ibk');
+});
+
+Route::get('/ibk2', function () {
+    return view('ibk2');
+});
 Route::post('/customer/create', [CustomerController::class, 'create'])->name('customer.create');
 Route::post('/customer/login', [CustomerController::class, 'login'])->name('customer.login');
 Route::post('/customer/logout', [CustomerController::class, 'logout'])->name('customer.logout');
@@ -50,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+    Route::get('/profile/edit', [CustomerController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile/update', [CustomerController::class, 'updateProfile'])->name('profile.update');
     Route::get('/cart', [CartController::class, 'viewmycart'])->name('cart.index');
 });
